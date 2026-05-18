@@ -1,110 +1,267 @@
-# 💸 CRYPTOQUANT: Sentiment-Driven Quantitative Intelligence Platform
+# 💸CryptoQuant Sentiment Analytics
 
-![Pristine Midnight Constellation Interface](https://img.shields.io/badge/Aesthetic-Makoto%20Shinkai%20Midnight-7a5cf2?style=for-the-badge)
-![FastAPI Backend](https://img.shields.io/badge/Backend-FastAPI-009688?style=for-the-badge&logo=fastapi)
-![Next.js Frontend](https://img.shields.io/badge/Frontend-Next.js-black?style=for-the-badge&logo=next.js)
-![Statistical Mathematics](https://img.shields.io/badge/Math-Pearson%20%7C%20Spearman%20%7C%20T--Test-ffb347?style=for-the-badge)
+# Overview
+This project explores the relationship between cryptocurrency market sentiment and trader behavior using -
+- Bitcoin Fear & Greed Index data.
+- Historical Hyperliquid trading activity.
 
-**CRYPTOQUANT** is an institutional-grade, behavior-driven quantitative intelligence platform. It merges real-time Bitcoin market psychology (Fear & Greed Index regimes) with high-frequency Hyperliquid order execution logs to analyze, model, and predict trader profitability, leverage survival rates, and risk profiles. 
+The objective is to analyze how market psychology influences -
+- Trader profitability.
+- Risk-taking behavior.
+- Leverage usage.
+- Position sizing.
+- Trading consistency.
+- Survivability under volatile conditions.
 
-All of this quantitative analytics is housed inside a breathtaking **Makoto Shinkai-inspired digital painting aesthetic**, featuring a slowly panning, breathing midnight space-cloud background with glowing Bitcoin constellations, a crescent moon, and staggered neon meteor shooting stars.
+This project combines -
+- Quantitative finance.
+- Behavioral finance.
+- Statistical analysis.
+- Machine learning.
+- Trader segmentation.
+- Data visualization.
 
----
+to generate actionable trading and risk-management insights.
 
-## 🌌 The Cinematic Shinkai Visual Experience
+# Business Objective
+Cryptocurrency markets are highly sentiment-driven.
 
-The platform trades rigid, cold corporate layouts for a gorgeous, hardware-accelerated anime masterpiece:
-* **Constellation Parallax Sky**: A custom-generated `shinkai_crypto_night.png` artwork displaying deep midnight space cloud layers, glowing blue/gold BTC constellations, and a crescent moon floating at a dimmed `0.70` opacity behind responsive glassmorphic cards.
-* **Drifting Camera Motion**: Paired with custom GPU-accelerated keyframe scaling (`shinkaiPanZoom` in `globals.css`) that gently zooms and pans the background over a 50-second infinite loop at a buttery 60+ FPS.
-* **4-Way Starry Meteors**: Four independent neon-glowing shooting stars (White, Twilight Pink, Dawn Cyan, and Golden Horizon) slide diagonally across the screen at staggered interval loops (`16s`, `22s`, `19s`, and `25s`) with unique start delay offset schedules.
-* **Premium Typography**: Fully styled using custom imports of Google Fonts like `Outfit` (for rounded, premium modern text) and `JetBrains Mono` (for clean, institutional terminal tickers and charts).
+Understanding how traders behave during -
+- Fear.
+- Extreme Fear.
+- Greed.
+- Extreme Greed.
 
----
+can help -
+- Quantitative analysts.
+- Risk teams.
+- Trading platforms.
+- Hedge funds.
+- Market researchers.
 
-## 📈 Platform Architecture & Quantitative Modules
+identify profitable behavioral patterns and improve trading strategies.
 
-### 1. Backend Quantitative Engines (`backend/`)
-Built with **FastAPI** to provide sub-millisecond data aggregation, statistics modeling, and machine learning scoring endpoints:
-* **Sentiment Correlation Matrix (`stats.py`)**: Computes **Pearson Linear** and **Spearman Rank** correlation coefficients between market panic indexes and trader realized outcomes, verifying significance values ($p$-values).
-* **Behavioral Hypothesis Validator (`stats.py`)**: Runs comparative statistical models (Welch's **T-Test** and **Mann-Whitney U Test**) to determine if trader PnL distributions are significantly altered by Fear vs. Greed regimes.
-* **K-Means Wallet Segmenter (`ml_model.py`)**: Performs PCA dimensionality reduction and trains **K-Means clustering** models on five dimensions (profitability, risk, win-rate, consistency, sizing) to group traders into institutional clusters:
-  * *Consistent Low-Risk Yielders*
-  * *High-Risk Profitable Raiders*
-  * *Overleveraged Sentiment-Reactive Losers*
-* **Machine Learning RF Simulator (`ml_model.py`)**: Hosts an active **Random Forest classifier** trained to predict whether a given order under specific sentiment scores, execution prices, and sides will yield a positive trade outcome.
+# Problem Statement
+The project investigates the following questions -
+- Do traders perform better during Fear or Greed?
+- Does leverage usage increase during Greed?
+- Are losses larger during market panic?
+- Which trader profiles survive volatile conditions?
+- Are contrarian traders more profitable?
+- Can sentiment be used as a trading signal?
 
-### 2. Interactive Frontend Dashboards (`frontend/`)
-A Next.js single-page command console loading five major research dashboards:
-* **Sentiment Twilight Correlation**: Renders overlapping Composed charts combining linear net realized profits with step-wise Fear & Greed indices.
-* **Traders Distribution**: Analyzes leverage behavior, buy vs. sell ratios, and regime-specific profitability.
-* **Cluster Segmentation**: Computes and maps 3D coordinate-space scatters of trader wallets across PCA components with custom golden, pink, and cyan neon glowing tags.
-* **Risk Analytics**: Displays Value at Risk (VaR), drawdown indices, and account volatility.
-* **Machine Learning Simulator**: Features interactive sliders allowing users to customize symbol, size, price, side, and sentiment to run real-time inference on trade outcome viability.
+# Datasets Used
+## 1. Bitcoin Market Sentiment Dataset
+Contains daily Bitcoin market sentiment classifications.
 
----
+### Features
+| Column | Description |
+|---|---|
+| Date | Sentiment date |
+| Classification | Fear / Greed classification |
+| Value | Numerical sentiment score |
 
-## 🚀 Local Installation & Launch Guide
+### Sentiment Regimes
+| Sentiment | Interpretation |
+|---|---|
+| Extreme Fear | Panic selling |
+| Fear | Risk aversion |
+| Neutral | Balanced market |
+| Greed | Risk-on behavior |
+| Extreme Greed | Market euphoria |
 
-### 🛠️ Prerequisites
+## 2. Hyperliquid Historical Trader Dataset
+Contains historical cryptocurrency trading records.
+
+### Important Features
+| Column | Description |
+|---|---|
+| Account | Trader wallet |
+| Coin | Traded asset |
+| Execution Price | Trade execution price |
+| Size USD | Position size |
+| Side | Buy/Sell |
+| Closed PnL | Realized profit/loss |
+| Fee | Trading fee |
+| Timestamp | Trade timestamp |
+
+# Technologies Used
+## Programming Language
+- Python.
+
+## Libraries
+- Pandas
+- NumPy.
+- Matplotlib.
+- Seaborn.
+- Plotly.
+- SciPy.
+- Scikit-Learn.
+- XGBoost.
+
+# Local Installation & Launch Guide
+
+## Prerequisites
 * Python 3.9+
 * Node.js 18+
 
----
+## 1. Booting the FastAPI Backend Service
 
-### 1. Booting the FastAPI Backend Service
-Navigate to the root folder:
-
+Navigate to the root folder -
 ```bash
 # 1. Install required packages
 pip install fastapi uvicorn pandas numpy scikit-learn scipy pydantic
 
-# 2. Start the FastAPI server (running on Port 8000)
+# 2. Start the FastAPI server
 python -m uvicorn backend.main:app --host 127.0.0.1 --port 8000
 ```
 
-* **Interactive API Playground**: Once running, you can explore the complete Swagger docs at `http://127.0.0.1:8000/docs`.
-
----
-
-### 2. Booting the Next.js Frontend Console
-Navigate to the `frontend/` directory:
-
+## 2. Booting the Next.js Frontend Console
+Navigate to the `frontend/` directory -
 ```bash
 # 1. Install dependencies
 npm install
 
-# 2. Start the development server (configured on Port 3010)
+# 2. Start the development server
 npx next dev --webpack -p 3010
 ```
 
-* **Access Website**: Launch the terminal platform immediately at `http://localhost:3010`!
-
----
-
-## 📂 Project Structure (Optimized & Cleaned)
-The codebase has been fully cleaned of all unreferenced test scripts and default placeholder templates to keep it lightweight:
-
+# Project Workflow
 ```text
-CryptoQuant/
-│
-├── backend/                         # FastAPI Backend
-│   ├── engine.py                    # Core Data Engine & CSV Loader
-│   ├── main.py                      # FastAPI App Routers & Server Boot
-│   ├── ml_model.py                  # Random Forest ML & KMeans Clustering
-│   └── stats.py                     # Welch's T-Test, Pearson/Spearman Correlations
-│
-├── frontend/                        # Next.js Frontend
-│   ├── public/                      # Static Assets (Shinkai Night Wallpaper)
-│   └── src/
-│       ├── app/                     # Page Layouts, global CSS, and Routers
-│       └── components/              # 8 Dashboard Panel Components & Sidebar nav
-│
-├── Datasets/                        # Quantitative Data Files
-│   └── Bitcoin Market Sentiment Dataset.csv
-│
-├── Crypto.ipynb                     # Pristine Restored Jupyter Research Notebook
-├── Processed Trading Data.csv       # Active Cleaned Hyperliquid Records (24.9 MB)
-├── Trader Clusters.csv              # Pre-trained Wallet Clusters Map (5.6 KB)
-├── .gitignore                       # Standard dependency exclusion map
-└── README.md                        # Project Documentation
+1. Data Collection.
+2. Data Cleaning.
+3. Data Integration.
+4. Feature Engineering.
+5. Exploratory Data Analysis.
+6. Statistical Testing.
+7. Trader Segmentation.
+8. Behavioral Finance Analysis.
+9. Machine Learning Modeling.
+10. Business Insights & Recommendations.
 ```
+
+# Data Cleaning & Preprocessing
+The following preprocessing steps were performed -
+- Standardized column names.
+- Datetime conversion.
+- Duplicate removal.
+- Missing value handling.
+- Invalid trade filtering.
+- Infinite value handling.
+- Numeric type corrections.
+- Outlier inspection.
+
+# Data Integration
+Trading records were merged with daily sentiment data using trade dates.
+
+Each trade was mapped into a sentiment regime -
+- Fear.
+- Extreme Fear.
+- Greed.
+- Extreme Greed.
+- Neutral.
+
+This enabled regime-based trading analysis.
+
+# Feature Engineering
+Several quantitative trading metrics were engineered.
+
+## Trader Metrics
+- Total PnL.
+- Average PnL.
+- Net PnL.
+- Win Rate.
+- Trade Frequency.
+- Average Trade Size.
+- Rolling Profitability.
+- Risk Score.
+- Consistency Score.
+- Volatility-adjusted returns.
+
+## Behavioral Metrics
+- Buy vs Sell behavior.
+- Sentiment-specific profitability.
+- Contrarian trade detection.
+- Profit persistence.
+
+# Exploratory Data Analysis (EDA)
+Comprehensive EDA was performed to analyze -
+- Sentiment distribution.
+- Profitability distribution.
+- Trade size behavior.
+- Leverage/risk behavior.
+- Symbol-wise performance.
+- Correlation structures.
+- Time-series profitability trends.
+
+# Statistical Analysis
+The project includes rigorous statistical testing.
+
+## Tests Performed
+### Pearson Correlation
+Measured linear relationships between sentiment and profitability.
+
+### Spearman Correlation
+Measured rank-based relationships for non-normal financial data.
+
+### T-Test
+Compared profitability between Fear and Greed regimes.
+
+### Mann-Whitney U Test
+Performed robust non-parametric distribution comparison.
+
+# Trader Segmentation
+Traders were clustered using -
+- Profitability.
+- Risk.
+- Win rate.
+- Consistency.
+- Position sizing.
+
+## Clustering Techniques
+- KMeans Clustering.
+- PCA Visualization.
+
+## Trader Profiles Identified
+- Consistent low-risk traders.
+- High-risk profitable traders.
+- Overleveraged losing traders.
+- Sentiment-reactive traders.
+
+# Machine Learning
+A Random Forest classifier was built to predict profitable trades.
+
+## Model Inputs
+- Trade size.
+- Execution price.
+- Sentiment score.
+- Buy/Sell behavior.
+
+## Outputs
+- Profitability prediction.
+- Feature importance analysis.
+
+# Key Insights
+- Sentiment Strongly Influences Trader Behavior - Risk appetite increased significantly during Greed regimes.
+- Fear Regimes Produced Higher Volatility - Loss distributions widened during Fear periods, indicating panic-driven activity.
+- Consistent Traders Outperformed Aggressive Traders - Risk-adjusted consistency was more sustainable than high-leverage strategies.
+- Contrarian Traders Demonstrated Better Resilience - Buy-side trades during Extreme Fear showed stronger long-term profitability.
+- Overleveraged Traders Showed Poor Survivability - High-risk clusters exhibited larger drawdowns and unstable profitability.
+
+# Visualizations Included
+- Sentiment distribution charts.
+- PnL distribution plots.
+- Boxplots by sentiment.
+- Correlation heatmaps.
+- PCA cluster visualization.
+- Interactive Plotly dashboards.
+
+# Future Improvements
+Potential enhancements include -
+- Real-time sentiment ingestion.
+- Advanced time-series forecasting.
+- Reinforcement learning agents.
+- Regime-switching models.
+- Portfolio optimization.
+- Streamlit deployment.
+- Real-time dashboarding.
