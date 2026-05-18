@@ -17,7 +17,7 @@ class DataEngine:
             return
         
         # Paths to workspace data
-        self.base_path = "c:\\Users\\HyuenKai\\Desktop\\CryptoQuant"
+        self.base_path = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
         self.processed_path = os.path.join(self.base_path, "Processed Trading Data.csv")
         self.cluster_path = os.path.join(self.base_path, "Trader Clusters.csv")
         self.sentiment_path = os.path.join(self.base_path, "Datasets", "Bitcoin Market Sentiment Dataset.csv")
