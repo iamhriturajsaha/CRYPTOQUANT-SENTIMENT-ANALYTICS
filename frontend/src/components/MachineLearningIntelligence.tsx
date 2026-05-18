@@ -8,6 +8,8 @@ interface MLProps {
   initialImportances: Record<string, number>;
 }
 
+const API_BASE = process.env.NEXT_PUBLIC_API_URL || "http://127.0.0.1:8555";
+
 export default function MachineLearningIntelligence({ initialImportances }: MLProps) {
   // Simulator inputs
   const [sizeUsd, setSizeUsd] = useState(10000);
@@ -36,7 +38,7 @@ export default function MachineLearningIntelligence({ initialImportances }: MLPr
     setResult(null);
     
     try {
-      const response = await fetch("http://127.0.0.1:8000/api/predict", {
+      const response = await fetch(`${API_BASE}/api/predict`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
