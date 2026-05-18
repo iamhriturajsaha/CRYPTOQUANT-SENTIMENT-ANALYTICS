@@ -5,6 +5,16 @@ This project explores the relationship between cryptocurrency market sentiment a
 - Bitcoin Fear & Greed Index data.
 - Historical Hyperliquid trading activity.
 
+## Quick Glance
+<p align="center">
+  <img src="Images/1.png" alt="1" width="1000"/><br>
+  <img src="Images/2.png" alt="2" width="1000"/><br>
+  <img src="Images/3.png" alt="3" width="1000"/><br>
+  <img src="Images/4.png" alt="4" width="1000"/><br>
+  <img src="Images/5.png" alt="5" width="1000"/><br>
+  <img src="Images/6.png" alt="6" width="1000"/><br>
+</p>
+
 The objective is to analyze how market psychology influences -
 - Trader profitability.
 - Risk-taking behavior.
