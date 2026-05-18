@@ -1,4 +1,4 @@
-from fastapi import FastAPI, HTTPException, Query
+from fastapi import FastAPI, HTTPException, Query, Response
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 from typing import Optional, Dict, Any, List
@@ -42,6 +42,9 @@ class PredictionRequest(BaseModel):
 @app.on_event("startup")
 async def startup_event():
     print("[INFO] Quantitative platform backend initialized and active!")
+@app.get("/favicon.ico", include_in_schema=False)
+def favicon():
+    return Response(status_code=204)
 
 @app.get("/")
 def read_root():
