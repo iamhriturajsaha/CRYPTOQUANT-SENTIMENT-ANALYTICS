@@ -12,6 +12,8 @@ import MachineLearningIntelligence from "@/components/MachineLearningIntelligenc
 
 import { Cpu, ServerCrash, RefreshCw } from "lucide-react";
 
+const API_BASE = process.env.NEXT_PUBLIC_API_URL || "http://127.0.0.1:8555";
+
 export default function Home() {
   // Navigation & UI States
   const [isDashboardOpen, setIsDashboardOpen] = useState(false);
@@ -44,7 +46,7 @@ export default function Home() {
   useEffect(() => {
     async function initPlatform() {
       try {
-        const response = await fetch("http://127.0.0.1:8000/api/coins");
+        const response = await fetch(`${API_BASE}/api/coins`);
         if (response.ok) {
           const data = await response.json();
           setCoinsList(data.coins);
@@ -87,11 +89,11 @@ export default function Home() {
         resClusters, 
         resRisk
       ] = await Promise.all([
-        fetch(`http://127.0.0.1:8000/api/metrics?${queryParams}`),
-        fetch(`http://127.0.0.1:8000/api/sentiment/analysis?coin=${coin}&archetype=${archetype}`),
-        fetch(`http://127.0.0.1:8000/api/traders?archetype=${archetype}`),
-        fetch("http://127.0.0.1:8000/api/clusters"),
-        fetch(`http://127.0.0.1:8000/api/risk?coin=${coin}&archetype=${archetype}`)
+        fetch(`${API_BASE}/api/metrics?${queryParams}`),
+        fetch(`${API_BASE}/api/sentiment/analysis?coin=${coin}&archetype=${archetype}`),
+        fetch(`${API_BASE}/api/traders?archetype=${archetype}`),
+        fetch(`${API_BASE}/api/clusters`),
+        fetch(`${API_BASE}/api/risk?coin=${coin}&archetype=${archetype}`)
       ]);
 
       if (!resKpis.ok || !resSentiment.ok || !resTraders.ok || !resClusters.ok || !resRisk.ok) {
