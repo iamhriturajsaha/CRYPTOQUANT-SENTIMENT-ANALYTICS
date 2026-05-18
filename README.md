@@ -113,7 +113,7 @@ Navigate to the root folder -
 pip install fastapi uvicorn pandas numpy scikit-learn scipy pydantic
 
 # 2. Start the FastAPI server
-python -m uvicorn backend.main:app --host 127.0.0.1 --port 8000
+python -m uvicorn backend.main:app --host 127.0.0.1 --port 8555
 ```
 
 ## 2. Booting the Next.js Frontend Console
